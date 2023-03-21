@@ -1,12 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Judo</title>
-</head>
-<body>
-    <h1>Connexion</h1>
-</body>
-</html>
+<div>
+            <form method="post" action="">
+                <fieldset>
+                    <legend>Se connecter</legend>
+                    <div class="mb-3">
+                        <label for="Login" class="form-label">Login</label>
+                        <input type="text" placeholder="Login" class="form-control" id="Login" aria-describedby="emailHelp" name="txtLogin" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Password" class="form-label">Mot de passe</label>
+                        <input type="password" placeholder="Mot de passe" class="form-control" id="Password" name="txtMp" required>
+                    </div>
+                    <div>
+                        <button name="btnEnvoi" class="btn btn-primary">Envoi</button>
+                    </div>
+                </fieldset>
+            </form>
+            <div>
+                <h3 class="text-danger">Pas encore inscrit ?</h3>
+                <a href="inscriptionOrEditProfil" class="btn btn-secondary">Clique</a>
+            </div>
+        </div>
