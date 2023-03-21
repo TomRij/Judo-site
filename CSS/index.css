@@ -1,0 +1,34 @@
+/* Définition du style du menu */
+#menu {
+    background-color: #FFFFFF; /* Fond blanc */
+    text-align: center; /* Centrer les liens */
+    padding: 10px; /* Ajouter un peu d'espace autour du menu */
+  }
+  
+  /* Style des liens */
+  #menu a {
+    display: inline-block; /* Afficher les liens sur la même ligne */
+    padding: 10px 20px; /* Ajouter de l'espace entre les liens */
+    text-decoration: none; /* Supprimer le soulignement des liens */
+    color: #000000; /* Couleur du texte */
+    font-weight: bold; /* Texte en gras */
+    font-size: 18px; /* Taille du texte */
+    text-transform: uppercase; /* Texte en majuscules */
+    letter-spacing: 1px; /* Espace entre les lettres */
+  }
+  
+  /* Style du lien "Accueil" */
+  #menu a.home {
+    background-color: #FEC107; /* Fond orange */
+  }
+  
+  /* Style du lien "Connexion" */
+  #menu a.login {
+    background-color: #0072C6; /* Fond bleu */
+  }
+  
+  /* Style du lien "Inscription" */
+  #menu a.register {
+    background-color: #000000; /* Fond noir */
+    color: #FFFFFF; /* Texte en blanc */
+  }
