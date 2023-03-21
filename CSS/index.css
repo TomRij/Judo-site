@@ -10,25 +10,70 @@
     display: inline-block; /* Afficher les liens sur la même ligne */
     padding: 10px 20px; /* Ajouter de l'espace entre les liens */
     text-decoration: none; /* Supprimer le soulignement des liens */
-    color: #000000; /* Couleur du texte */
+    color: black; /* Couleur du texte */
     font-weight: bold; /* Texte en gras */
-    font-size: 18px; /* Taille du texte */
+    font-size: 21px; /* Taille du texte */
     text-transform: uppercase; /* Texte en majuscules */
     letter-spacing: 1px; /* Espace entre les lettres */
   }
-  
-  /* Style du lien "Accueil" */
-  #menu a.home {
-    background-color: #FEC107; /* Fond orange */
+  form {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 78%;
+    margin: 0 auto;
   }
   
-  /* Style du lien "Connexion" */
-  #menu a.login {
-    background-color: #0072C6; /* Fond bleu */
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px;
   }
   
-  /* Style du lien "Inscription" */
-  #menu a.register {
-    background-color: #000000; /* Fond noir */
-    color: #FFFFFF; /* Texte en blanc */
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="ceinture"],
+  form select,
+  form textarea {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
   }
+  
+  form input[type="submit"] {
+    background-color: #e6e6e6;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #d4d4d4;
+  }
+  
+  form select {
+    height: 40px;
+  }
+  
+  form textarea {
+    min-height: 150px;
+  }
+  
+  legend {
+    font-size: 30px;
+    margin-left: 5%;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+  }
+  
