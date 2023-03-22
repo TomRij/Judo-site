@@ -1,20 +1,18 @@
-/* Définition du style du menu */
 #menu {
-    background-color: #FFFFFF; /* Fond blanc */
-    text-align: center; /* Centrer les liens */
-    padding: 10px; /* Ajouter un peu d'espace autour du menu */
+    background-color: #FFFFFF; 
+    text-align: center; 
+    padding: 10px; 
   }
-  
-  /* Style des liens */
+
   #menu a {
-    display: inline-block; /* Afficher les liens sur la même ligne */
-    padding: 10px 20px; /* Ajouter de l'espace entre les liens */
-    text-decoration: none; /* Supprimer le soulignement des liens */
-    color: black; /* Couleur du texte */
-    font-weight: bold; /* Texte en gras */
-    font-size: 21px; /* Taille du texte */
-    text-transform: uppercase; /* Texte en majuscules */
-    letter-spacing: 1px; /* Espace entre les lettres */
+    display: inline-block; 
+    padding: 10px 20px;
+    text-decoration: none; 
+    color: black; 
+    font-weight: bold; 
+    font-size: 21px;
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
   }
   form {
     background-color: #f7f7f7;
@@ -46,7 +44,7 @@
     font-size: 16px;
   }
   
-  form input[type="submit"] {
+  button {
     background-color: #e6e6e6;
     color: #333;
     border: none;
@@ -57,7 +55,7 @@
     transition: background-color 0.3s ease;
   }
   
-  form input[type="submit"]:hover {
+  button:hover {
     background-color: #d4d4d4;
   }
   

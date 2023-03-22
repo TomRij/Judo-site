@@ -11,7 +11,7 @@
                         <input type="password" placeholder="Mot de passe" class="form-control" id="Password" name="password" required>
                     </div>
                     <div>
-                        <input name="btnEnvoi" type="submit">
+                        <button name="btnEnvoi" type="submit" >Envoyer</button>
                     </div>
                 </fieldset>
             </form>

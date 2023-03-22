@@ -11,13 +11,28 @@ if($uri == "/connexion"){
         header('location:/');
     }
 }elseif($uri == "/inscription"){
-    //var_dump($_POST);
     if(isset($_POST["btnEnvoi"])){
-        createUser($dbh);
-        header('location:/');
+        $messageError = verifEmptyData();
+        if (!$messageError) { //!$messageError est parail que $messageError == false
+                createUser($dbh);
+                header('location:/connexion');
+        }
     }
     require_once "Templates/Users/inscription.php";
 }elseif($uri == "/deconnexion"){
     session_destroy();
     header("location:/");
+}
+
+function verifEmptyData(){
+    foreach ($_POST as $key => $value) {
+        if (empty(str_replace(' ', '',$value))) {
+            $messageError[$key] = "Veuillez entrer votre " . $key;
+        }
+    }
+    if(isset($messageError)){
+        return $messageError; 
+    }else {
+        return false;
+    }
 }
