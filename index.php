@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     require_once "Config/dataBaseConnexion.php";
     /*$sth = $dbh->prepare("select * from biens");
     $sth->execute();
@@ -19,8 +20,12 @@
 </head>
 <body>
     <header id="menu">
-        <a href="/">Accueil</a>
-        <a href="connexion">Connexion</a>
+        <a href="/">Accueil</a> 
+        <?php if(isset($_SESSION["user"])): ?>
+            <a href="deconnexion">Déconnexion</a>
+        <?php else : ?>
+            <a href="connexion">Connexion</a>
+        <?php endif ?>
         <a href="inscription">Inscription</a>
     </header>
     <main>

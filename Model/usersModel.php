@@ -16,3 +16,21 @@ function createUser($dbh) {
         die($message);
     }
 }
+
+function connectUser($dbh){
+    
+    try {
+        $query = "select * from user where userLogin = :userLogin and userPassword = :userPassword";        
+        $connectUser = $dbh->prepare($query);
+        $connectUser->execute([
+            'userLogin' => $_POST["login"],
+            'userPassword' => $_POST['password']
+        ]);
+        $user = $connectUser->fetch();
+        var_dump($user);
+        $_SESSION["user"] = $user;
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
