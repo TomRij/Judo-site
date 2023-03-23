@@ -21,12 +21,13 @@
 <body>
     <header id="menu">
         <a href="/">Accueil</a> 
+        
         <?php if(isset($_SESSION["user"])): ?>
             <a href="deconnexion">Déconnexion</a>
+            <a href="profil">Profil</a>
         <?php else : ?>
             <a href="connexion">Connexion</a>
         <?php endif ?>
-        <a href="inscription">Inscription</a>
     </header>
     <main>
         <?php
@@ -36,6 +37,6 @@
     </main>
     <footer>
         <h1>Footer</h1>
-    </footer    
+    </footer>    
 </body>
 </html>

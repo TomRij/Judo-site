@@ -22,6 +22,16 @@ if($uri == "/connexion"){
 }elseif($uri == "/deconnexion"){
     session_destroy();
     header("location:/");
+}elseif($uri == "/profil"){
+    require_once "Templates/users/profil.php";
+}elseif ($uri === "/modifyProfil") {
+    if(isset($_POST["btnEnvoi"])){
+        var_dump("cliqued");
+        updateUser($pdo);
+        reloadSession($pdo);
+        header("location:/profil");
+    }
+    require_once "Templates/Users/inscription.php";
 }
 
 function verifEmptyData(){

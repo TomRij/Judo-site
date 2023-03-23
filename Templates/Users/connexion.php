@@ -16,7 +16,7 @@
                 </fieldset>
             </form>
             <div>
-                <h3  class="inscription-phrase">Pas encore inscrit ?</h3>
-                <a href="inscription" class="btn btn-secondary">Clique</a>
+                <h3>Pas encore inscrit ?</h3>
+                <a href="inscription">Clique</a>
             </div>
         </div>
