@@ -1,12 +1,33 @@
-#menu {
-    background-color: #FFFFFF; 
+body{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+h1 {
+  z-index: 10;
+}
+
+img:hover {
+  transform: scale(130%);
+  transition: all ease-in-out 150ms; 
+}
+
+main{
+  width: 80%;
+  margin: 0 auto;
+}
+
+  #menu {
+    background-color: #e2e1e1; 
     text-align: center; 
-    padding: 10px; 
+    padding: 20px; 
   }
 
   #menu a {
     display: inline-block; 
-    padding: 10px 20px;
+    padding: 20px 25px;
     text-decoration: none; 
     color: black; 
     font-weight: bold; 
@@ -15,11 +36,11 @@
     letter-spacing: 1px; 
   }
   form {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 78%;
+    background-color: #ebe9e9;
+    padding: 25px;
+    border-radius: 20px;
     margin: 0 auto;
+    margin-top: 10px;
   }
   
   form label {
@@ -29,10 +50,7 @@
     font-size: 18px;
   }
   
-  form input[type="text"],
-  form input[type="email"],
-  form input[type="password"],
-  form input[type="ceinture"],
+  form input,
   form select,
   form textarea {
     display: block;
@@ -40,12 +58,12 @@
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 7px;
     font-size: 16px;
   }
   
   button {
-    background-color: #e6e6e6;
+    background-color: #dbdada;
     color: #333;
     border: none;
     padding: 8px 16px;
@@ -85,4 +103,31 @@
   }
   .text-align-center{
     text-align: center;
+  }
+
+  .FlexContainer{
+    display: flex;
+  }
+
+  .wrap{
+    flex-wrap: wrap;
+  }
+
+  .techniqueJudo{
+    justify-content: space-around;
+    margin: 30px 0;
+  }
+
+  .block{
+    display: block;
+  } 
+  .mb5{
+    margin-bottom: 50px;
+  }
+
+  footer{
+    background-color: #686963;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
   }
