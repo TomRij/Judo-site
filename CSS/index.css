@@ -2,16 +2,18 @@ body{
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+  color: #212121;
   background-color: #ffffff;
 }
 
 main{
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 100px;
 }
 
   #menu {
-    background-color: #e2e1e1; 
+    background-color: #0077B5; 
     text-align: center; 
     padding: 20px; 
   }
@@ -27,11 +29,15 @@ main{
     letter-spacing: 1px; 
   }
   form {
-    background-color: #ebe9e9;
+    background-color: #FFA000 ;
     padding: 25px;
     border-radius: 20px;
     margin: 0 auto;
     margin-top: 10px;
+  }
+
+  fieldset{
+    border: none;
   }
   
   form label {
@@ -54,7 +60,7 @@ main{
   }
   
   button {
-    background-color: #dbdada;
+    background-color: #00A0DC;
     color: #333;
     border: none;
     padding: 8px 16px;
@@ -127,7 +133,7 @@ main{
   }
 
   footer{
-    background-color: #686963;
+    background-color: #0077B5;
     position: fixed;
     bottom: 0;
     width: 100%;
