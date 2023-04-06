@@ -132,3 +132,7 @@ main{
     bottom: 0;
     width: 100%;
   }
+
+  .article{
+    list-style-type: none;
+  }

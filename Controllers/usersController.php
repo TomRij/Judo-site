@@ -10,7 +10,7 @@ if($uri == "/connexion"){
         connectUser($dbh);
         header('location:/');
     }
-}elseif($uri == "/inscription"){
+}elseif($uri == "/inscription"){ //INSCRIPTION
     if(isset($_POST["btnEnvoi"])){
         $messageError = verifEmptyData();
         if (!$messageError) { //!$messageError est parail que $messageError == false
@@ -19,19 +19,22 @@ if($uri == "/connexion"){
         }
     }
     require_once "Templates/Users/inscription.php";
-}elseif($uri == "/deconnexion"){
+}elseif($uri == "/deconnexion"){ // DECO
     session_destroy();
     header("location:/");
 }elseif($uri == "/profil"){
     require_once "Templates/users/profil.php";
-}elseif ($uri === "/modifyProfil") {
+}elseif ($uri === "/modifyProfil") { // MODIFY
     if(isset($_POST["btnEnvoi"])){
-        var_dump("cliqued");
-        updateUser($pdo);
-        reloadSession($pdo);
+        updateUser($dbh);
+        reloadSession($dbh);
         header("location:/profil");
     }
     require_once "Templates/Users/inscription.php";
+}elseif ($uri === "/deleteProfil") { // DELETE
+        deleteUser($dbh);
+        session_destroy();
+        header("location:/inscription");
 }
 
 function verifEmptyData(){

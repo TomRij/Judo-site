@@ -35,37 +35,51 @@ function connectUser($dbh){
     }
 }
 
-function updateUser($pdo)
+function updateUser($dbh)
 {
     try {
-        $query = "UPDATE utilisateurs SET nomUser = :nomUser, prenomUser = :prenomUser, passWordUser = :passWordUser, emailUser = :emailUser WHERE id = :id";
-        $updateUser = $pdo->prepare($query);
+        $query = "UPDATE user SET userNom = :userNom, userPrenom = :userPrenom, userPassword = :userPassword, userEmail = :userEmail WHERE userId = :id";
+        $updateUser = $dbh->prepare($query);
         $updateUser->execute([
-            'nomUser' => $_POST['nom'],
-            'prenomUser' => $_POST['prenom'],
-            'emailUser' => $_POST['email'],
-            'passWordUser' => $_POST['mot_de_passe'],
-            'id' => $_SESSION["user"]->id
+            'userNom' => $_POST['nom'],
+            'userPrenom' => $_POST['prenom'],
+            'userPassword' => $_POST['password'],
+            'userEmail' => $_POST['email'],
+            'id' => $_SESSION["user"]->userId
         ]);
-        reloadSession($pdo);
+        reloadSession($dbh);
     } catch (PDOException $e) {
         $message = $e->getMessage();
         die($message);
     }
 }
 
-function reloadSession($pdo)
+function reloadSession($dbh)
 {
     try {
-        $query = "select * from utilisateurs where id = :id";
-        $chercheUser = $pdo->prepare($query);
+        $query = "select * from user where userId = :id";
+        $chercheUser = $dbh->prepare($query);
         $chercheUser->execute([
-            'id' => $_SESSION["user"]->id
+            'id' => $_SESSION["user"]->userId
         ]);
         $user=$chercheUser -> fetch();
         if ($user) {
             $_SESSION['user']=$user;
         }
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+
+function deleteUser($dbh)
+{
+    try {
+        $query = "delete from user where userId = :id";
+        $chercheUser = $dbh->prepare($query);
+        $chercheUser->execute([
+            'id' => $_SESSION["user"]->userId
+        ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();
         die($message);

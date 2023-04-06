@@ -17,6 +17,10 @@
                 <h3>Modifier le Profil</h3>
                 <a href="modifyProfil">Clique</a>
             </div>
+            <div>
+                <h3>Supprimer le Profil</h3>
+                <a href="deleteProfil">Clique</a>
+            </div>
         </ol>
     </main>
     <footer>
