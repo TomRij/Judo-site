@@ -40,7 +40,7 @@
         ?>
     </main>
     <footer>
-        <h1>Footer</h1>
+        <p>Footer</p>
     </footer>    
 </body>
 </html>
