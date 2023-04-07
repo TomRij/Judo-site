@@ -1,0 +1,12 @@
+.FlexContainer{
+    display: flex;
+}
+.flex-direction{
+    flex-direction: row;
+}
+.justify-content{
+    justify-content: center
+}
+.wrap{
+    flex-wrap: wrap;
+  }

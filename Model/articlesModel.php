@@ -1,9 +1,9 @@
 <?php
-function selectAllArticles($pdo)
+function selectAllArticles($dbh)
 {
     try {
-        $query = "select * from article";
-        $chercheUser = $pdo->prepare($query);
+        $query = "SELECT * FROM article ORDER BY articleId DESC LIMIT 6;";
+        $chercheUser = $dbh->prepare($query);
         $chercheUser->execute();
         return $chercheUser -> fetchAll();
     } catch (PDOException $e) {

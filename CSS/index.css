@@ -102,14 +102,6 @@ main{
     text-align: center;
   }
 
-  .FlexContainer{
-    display: flex;
-  }
-
-  .wrap{
-    flex-wrap: wrap;
-  }
-
   .techniqueJudo{
     justify-content: space-around;
     margin: 40px 0;
@@ -142,3 +134,19 @@ main{
   .article{
     list-style-type: none;
   }
+  .articles-titre{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+.titre-article{
+  margin: 10px;
+  font-size: 20px;
+}
+.place-article{
+  max-width: 30%;
+  margin: 0 auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
