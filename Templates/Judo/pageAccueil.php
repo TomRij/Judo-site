@@ -7,11 +7,11 @@
 
 <h1 class="articles-titre">Les articles les plus récents</h1>
 <div class="FlexContainer article justify-content wrap">
-  <?php foreach($articles as $articles) : ?>
-    <li class="place-article">
-      <h2 class="titre-article"><?= $articles->articleTitre ?></h2>
-      <p><?= $articles->articleTexte ?></p>
-    </li>
-  <?php endforeach ?>
+    <?php foreach($articles as $article) : ?>
+        <li class="place-article">
+            <h2 class="titre-article"><?= $article->articleTitre ?></h2>
+            <p><?= substr($article->articleTexte, 0, 150) ?>...</p>
+            <a href="article.php?articleId=<?= $article->articleId ?>">Lire la suite</a>
+        </li>
+    <?php endforeach ?>
 </div>
-
