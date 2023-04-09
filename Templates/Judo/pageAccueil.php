@@ -9,9 +9,12 @@
 <div class="FlexContainer article justify-content wrap">
     <?php foreach($articles as $article) : ?>
         <li class="place-article">
-            <h2 class="titre-article"><?= $article->articleTitre ?></h2>
-            <p><?= substr($article->articleTexte, 0, 150) ?>...</p>
-            <a href="article.php?articleId=<?= $article->articleId ?>">Lire la suite</a>
+            <div><a class="a-article"href="article?articleId=<?= $article->articleId ?>&amp;btnEnvoi=1">
+                <h2 class="titre-article"><?= $article->articleTitre ?></h2>
+                <p><?= substr($article->articleTexte, 0, 100) ?>...</p>
+            </a></div>    
         </li>
     <?php endforeach ?>
 </div>
+
+<h1 class="articles-titre">Les articles les plus populaires</h1>
