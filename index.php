@@ -27,16 +27,18 @@
         <a href="/">Accueil</a> 
         
         <?php if(isset($_SESSION["user"])): ?>
-            <a href="deconnexion">Déconnexion</a>
             <a href="profil">Profil</a>
+            <a href="createArticle">Article</a>
+            <a href="deconnexion">Déconnexion</a>
         <?php else : ?>
             <a href="connexion">Connexion</a>
         <?php endif ?>
     </header>
     <main>
         <?php
-            require_once "Controllers/judoController.php";
             require_once "Controllers/usersController.php";
+            require_once "Controllers/articleController.php";
+
         ?>
     </main>
     <footer>

@@ -24,3 +24,18 @@ function selectArticle($dbh, $articleId)
         die($message);
     }
 }
+
+function createArticle($dbh) {
+  
+    try {
+        $query = "INSERT INTO article (articleTitre, articleTexte) VALUES (:articleTitre, :articleTexte)";
+        $ajouteUser = $dbh->prepare($query);
+        $ajouteUser->execute([
+            'articleTitre' => $_POST["titre"],
+            'articleTexte' => $_POST["text"]
+        ]);
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}

@@ -4,6 +4,8 @@ require_once "Model/usersModel.php";
 
 $uri = $_SERVER["REQUEST_URI"];
 
+var_dump($uri);
+
 if($uri == "/connexion"){
     require_once "Templates/Users/connexion.php";
     if(isset($_POST["btnEnvoi"])){
