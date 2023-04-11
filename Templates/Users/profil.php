@@ -1,25 +1,15 @@
 
-        <h1>Votre page profil</h1>
-        <ol>
-            <div>
-                <li>Nom</li>
-                <p><?= $_SESSION["user"]->userNom ?></p></p>
+        <h1 class="profil-login titre-profil">Votre page de profil</h1>
+        <ol class="profil-login profil-liste">
+            <div class="profil-login">
+                <li><h2>Bienvenue <?= $_SESSION["user"]->userLogin ?></h2></li>
             </div>
-            <div>
-                <li>Prénom</li>
-                <p><?= $_SESSION["user"]->userPrenom ?></p></p>
+            <div class="profil-info">
+                <li><img class="profil-photo-valeur" id="imageProfil" src="Images/profil.jpg" alt="Mon image de profil"></li>
             </div>
-            <div>
-                <li>Photo de profil</li>
-                <img id="imageProfil" src="Images/profil.png" alt="Mon image de profil">
-            </div>
-            <div>
-                <h3>Modifier le Profil</h3>
-                <a href="modifyProfil">Clique</a>
-            </div>
-            <div>
-                <h3>Supprimer le Profil</h3>
-                <a href="deleteProfil">Clique</a>
+            <div class="space-around">
+                <li><a class="modifier-profil profil" href="modifyProfil">Modifier information</a></li>
+                <li><a class="delete-profil profil"href="deleteProfil">Supprimer profil</a></li>
             </div>
         </ol>
     </main>

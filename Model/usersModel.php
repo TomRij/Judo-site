@@ -27,7 +27,6 @@ function connectUser($dbh){
             'userPassword' => $_POST['password']
         ]);
         $user = $connectUser->fetch();
-        var_dump($user);
         $_SESSION["user"] = $user;
     } catch (PDOException $e) {
         $message = $e->getMessage();

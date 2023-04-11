@@ -23,15 +23,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Macondo&family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="menu">
-        <a href="/">Accueil</a> 
+    <header class="menu">
+        <a class="menu-a" href="/">Accueil</a> 
         
         <?php if(isset($_SESSION["user"])): ?>
-            <a href="profil">Profil</a>
-            <a href="createArticle">Article</a>
-            <a href="deconnexion">Déconnexion</a>
+            <a class="menu-a" class="menu-a" href="profil">Profil</a>
+            <a class="menu-a" href="createArticle">Article</a>
+            <a class="menu-a" href="deconnexion">Déconnexion</a>
         <?php else : ?>
-            <a href="connexion">Connexion</a>
+            <a class="menu-a" href="connexion">Connexion</a>
         <?php endif ?>
     </header>
     <main>
