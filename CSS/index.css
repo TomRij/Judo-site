@@ -173,10 +173,22 @@ main{
   margin-right: 20px;
 }
 .article-complet-titre{
-  font-size: 45px;
+  font-size: 42px;
 }
 .article-complet-text{
-  font-size: 20px;
+  font-size: 23px;
+}
+.article-auteur {
+  font-size: 22px;
+  color: #FFA000;
+  text-shadow: 0px 0px 5px #FFA000;
+  animation: glitter 1s ease-in-out infinite;
+}
+
+@keyframes glitter {
+  0% { text-shadow: 0px 0px 4px #FFA000; }
+  50% { text-shadow: 0px 0px 15px #FFA000; }
+  100% { text-shadow: 0px 0px 5px #FFA000; }
 }
 
 .modifier-profil {

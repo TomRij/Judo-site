@@ -42,7 +42,7 @@
         ?>
     </main>
     <footer>
-        <p>Footer</p>
+        <p>réalisé par Tom Rijckaert</p>
     </footer>    
 </body>
 </html>

@@ -19,7 +19,6 @@ if($uri == "/index.php" ||  $uri == "/"){
     }
 }elseif($uri == "/createArticle"){
     if(isset($_POST["btnArticle"])){
-        var_dump("test1");
         $messageError = verifEmptyData();
         if (!$messageError) { //!$messageError est parail que $messageError == false
             createArticle($dbh);

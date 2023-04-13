@@ -15,10 +15,13 @@ function selectAllArticles($dbh)
 function selectArticle($dbh, $articleId)
 {
     try {
-        $query = "SELECT * FROM article WHERE articleId = :id";
-    $chercheUser = $dbh->prepare($query);
-    $chercheUser->execute(array(':id' => $articleId));
-    return $chercheUser->fetch();
+        $query = "SELECT article.*, user.userLogin 
+                  FROM article 
+                  INNER JOIN user ON article.userId = user.userId 
+                  WHERE article.articleId = :id";
+        $chercheUser = $dbh->prepare($query);
+        $chercheUser->execute(array(':id' => $articleId));
+        return $chercheUser->fetch();
     } catch (PDOException $e) {
         $message = $e->getMessage();
         die($message);
