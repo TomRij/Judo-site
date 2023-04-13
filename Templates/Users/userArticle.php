@@ -9,8 +9,8 @@
             <?php if(isset($messageError["titre"])) : ?><small><?= $messageError["titre"] ?></small><?php endif ?> 
         </div>
         <div>
-            <label for="Text" class="form-label">Texte</label>
-            <input type="text" placeholder="Text" class="form-control" id="text" name="text" value="<?php if(isset($_SESSION["article"])) : ?><?= $_SESSION["article"]->articleTexte ?><?php endif ?>">
+            <label for="text" class="form-label">Texte</label>
+            <textarea placeholder="Rédiger votre article" class="form-control" id="text" name="text"><?php if(isset($_SESSION["article"])) : ?><?= $_SESSION["article"]->articleTexte ?><?php endif ?></textarea>
             <?php if(isset($messageError["text"])) : ?><small><?= $messageError["text"] ?></small><?php endif ?> 
         </div>
         <div>

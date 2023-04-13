@@ -28,14 +28,23 @@ function selectArticle($dbh, $articleId)
 function createArticle($dbh) {
   
     try {
-        $query = "INSERT INTO article (articleTitre, articleTexte) VALUES (:articleTitre, :articleTexte)";
+        $query = "INSERT INTO article (articleTitre, articleTexte, userId) VALUES (:articleTitre, :articleTexte, :userId)";
         $ajouteUser = $dbh->prepare($query);
         $ajouteUser->execute([
             'articleTitre' => $_POST["titre"],
-            'articleTexte' => $_POST["text"]
+            'articleTexte' => $_POST["text"],
+            'userId' => $_SESSION["user"]->userId,
         ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();
         die($message);
+    }
+}
+
+function showLoginArticle($dbh) {
+    try {
+        
+    } catch (\Throwable $th) {
+
     }
 }
