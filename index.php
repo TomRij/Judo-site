@@ -42,7 +42,7 @@
         ?>
     </main>
     <footer>
-        <p>réalisé par Tom Rijckaert</p>
+        <p>réalisé par Tom Rijckaert de la 3ème dimension</p>
     </footer>    
 </body>
 </html>

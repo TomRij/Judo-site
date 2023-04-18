@@ -7,6 +7,9 @@
             <div class="profil-info">
                 <li><img class="profil-photo-valeur" id="imageProfil" src="Images/profil.jpg" alt="Mon image de profil"></li>
             </div>
+            <div class="ceinture">
+                <?php if ($_SESSION["user"]->ceintureId == 1):?><img src="Images/profil.jpg" alt="ceinture blanche"><?php endif ?>
+            </div>
             <div class="space-around">
                 <li><a class="modifier-profil profil" href="modifyProfil">Modifier information</a></li>
                 <li><a class="delete-profil profil"href="deleteProfil">Supprimer profil</a></li>

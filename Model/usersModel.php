@@ -2,14 +2,15 @@
 function createUser($dbh) {
   
     try {
-        $query = "INSERT INTO user (userNom, userPrenom, userLogin, userEmail, userPassword) VALUES (:userNom, :userPrenom, :userLogin, :userEmail, :userPassword)";
+        $query = "INSERT INTO user (userNom, userPrenom, userLogin, userEmail, userPassword, ceintureId) VALUES (:userNom, :userPrenom, :userLogin, :userEmail, :userPassword, :ceintureId)";
         $ajouteUser = $dbh->prepare($query);
         $ajouteUser->execute([
             'userNom' => $_POST["nom"],
             'userPrenom' => $_POST["prenom"],
             'userLogin' => $_POST["login"],
             'userEmail' => $_POST["email"],
-            'userPassword' => $_POST['password']
+            'userPassword' => $_POST['password'],
+            'ceintureId' => $_POST['ceinture']
         ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();
@@ -37,14 +38,15 @@ function connectUser($dbh){
 function updateUser($dbh)
 {
     try {
-        $query = "UPDATE user SET userNom = :userNom, userPrenom = :userPrenom, userPassword = :userPassword, userEmail = :userEmail WHERE userId = :id";
+        $query = "UPDATE user SET userNom = :userNom, userPrenom = :userPrenom, userPassword = :userPassword,  ceintureId = :ceintureId, userEmail = :userEmail WHERE userId = :id";
         $updateUser = $dbh->prepare($query);
         $updateUser->execute([
             'userNom' => $_POST['nom'],
             'userPrenom' => $_POST['prenom'],
             'userPassword' => $_POST['password'],
             'userEmail' => $_POST['email'],
-            'id' => $_SESSION["user"]->userId
+            'id' => $_SESSION["user"]->userId,
+            'ceintureId' => $_POST['ceinture']
         ]);
         reloadSession($dbh);
     } catch (PDOException $e) {

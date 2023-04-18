@@ -44,10 +44,3 @@ function createArticle($dbh) {
     }
 }
 
-function showLoginArticle($dbh) {
-    try {
-        
-    } catch (\Throwable $th) {
-
-    }
-}
