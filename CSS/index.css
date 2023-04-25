@@ -14,6 +14,7 @@ main{
 }
 
   .menu {
+    z-index: 10;
     position: fixed;
     top: 0;
     width: 100%;
@@ -146,6 +147,7 @@ main{
     margin: 0 auto;
     margin-bottom: 12px;
     color: #0c1a50;
+    margin-bottom: 25px;
     
   }
 .titre-article{
@@ -167,9 +169,12 @@ main{
   background: #03cbe2;
 }
 .place-article{
-  max-width: 30%;
+  background-color: #f3f3f7;
+  border-radius: 18px;
+  width: 25%;
+  padding: 15px;
   margin: 0 auto;
-  margin-left: 20px;
+  margin-bottom: 20px;
   margin-right: 20px;
 }
 .article-complet-titre{

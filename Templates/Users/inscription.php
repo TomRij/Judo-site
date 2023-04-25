@@ -38,8 +38,8 @@ else:?><h1 class="inscription-phrase text-align-center">Peu importe votre ceintu
                         <option value="5">Ceinture bleue</option>
                         <option value="6">Ceinture marron</option>
                         <option value="7">Ceinture noire</option>
-                        <option value="8">Ceinture rouge et blanche</option>
-                        <option value="9">Ceinture rouge</option>
+                        <option value="13">Ceinture rouge, blanche</option>
+                        <option value="14">Ceinture rouge</option>
                     </select>
                 </div>
                 <div>
