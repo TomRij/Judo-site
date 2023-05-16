@@ -5,12 +5,12 @@ function createUser($dbh) {
         $query = "INSERT INTO user (userNom, userPrenom, userLogin, userEmail, userPassword, ceintureId) VALUES (:userNom, :userPrenom, :userLogin, :userEmail, :userPassword, :ceintureId)";
         $ajouteUser = $dbh->prepare($query);
         $ajouteUser->execute([
-            'userNom' => $_POST["nom"],
-            'userPrenom' => $_POST["prenom"],
-            'userLogin' => $_POST["login"],
-            'userEmail' => $_POST["email"],
-            'userPassword' => $_POST['password'],
-            'ceintureId' => $_POST['ceinture']
+            'userNom' => htmlentities($_POST["nom"]),
+            'userPrenom' => htmlentities($_POST["prenom"]),
+            'userLogin' => htmlentities($_POST["login"]),
+            'userEmail' => htmlentities($_POST["email"]),
+            'userPassword' => htmlentities($_POST['password']),
+            'ceintureId' => htmlentities($_POST['ceinture'])
         ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();
@@ -24,8 +24,8 @@ function connectUser($dbh){
         $query = "select * from user where userLogin = :userLogin and userPassword = :userPassword";        
         $connectUser = $dbh->prepare($query);
         $connectUser->execute([
-            'userLogin' => $_POST["login"],
-            'userPassword' => $_POST['password']
+            'userLogin' => htmlentities($_POST["login"]),
+            'userPassword' => htmlentities($_POST['password'])
         ]);
         $user = $connectUser->fetch();
         $_SESSION["user"] = $user;
@@ -41,12 +41,12 @@ function updateUser($dbh)
         $query = "UPDATE user SET userNom = :userNom, userPrenom = :userPrenom, userPassword = :userPassword,  ceintureId = :ceintureId, userEmail = :userEmail WHERE userId = :id";
         $updateUser = $dbh->prepare($query);
         $updateUser->execute([
-            'userNom' => $_POST['nom'],
-            'userPrenom' => $_POST['prenom'],
-            'userPassword' => $_POST['password'],
-            'userEmail' => $_POST['email'],
-            'id' => $_SESSION["user"]->userId,
-            'ceintureId' => $_POST['ceinture']
+            'userNom' => htmlentities($_POST['nom']),
+            'userPrenom' => htmlentities($_POST['prenom']),
+            'userPassword' => htmlentities($_POST['password']),
+            'userEmail' => htmlentities($_POST['email']),
+            'id' => htmlentities($_SESSION["user"]-->userId),
+            'ceintureId' => htmlentities($_POST['ceinture'])
         ]);
         reloadSession($dbh);
     } catch (PDOException $e) {
