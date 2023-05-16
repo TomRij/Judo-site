@@ -28,6 +28,17 @@ function selectArticle($dbh, $articleId)
     }
 }
 
+function MyArticles($dbh){
+    try {
+        $query ="select * from article where userId = :userId";
+        $chercheUser = $dbh->prepare($query);
+        $chercheUser->execute(array(':userId' =>$_SESSION["user"]->userId));
+        return $chercheUser->fetchAll();
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
 function createArticle($dbh) {
   
     try {
@@ -36,7 +47,7 @@ function createArticle($dbh) {
         $ajouteUser->execute([
             'articleTitre' => htmlentities($_POST["titre"]),
             'articleTexte' => htmlentities($_POST["text"]),
-            'userId' => htmlentities($_SESSION["user"]->userId),
+            'userId' => $_SESSION["user"]->userId,
         ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();

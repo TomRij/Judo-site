@@ -1,5 +1,3 @@
-<h1 class="titre">Vos articles</h1>
-<!-- mettre les articles créer par l'utilisateur-->
 <form method="post" action="">
     <fieldset>
         <legend><?php if(isset($_SESSION["user"])) : ?>Créer un nouvelle article<?php else : ?><?php endif ?></legend>
@@ -18,3 +16,16 @@
         </div>
     </fieldset>
 </form>
+
+<h1 class="titre">Vos articles</h1>
+
+<div class="FlexContainer article justify-content wrap">
+    <?php foreach($articles as $articles) : ?>
+        <li class="place-article">
+            <div><a class="a-article"href="article?articleId=<?= $articles->articleId ?>&amp;btnEnvoi=1">
+                <h2 class="titre-article"><?= $articles->articleTitre ?></h2>
+                <p><?= substr($articles->articleTexte, 0, 100) ?>...</p>
+            </a></div>    
+        </li>
+    <?php endforeach ?>
+</div>
