@@ -49,6 +49,13 @@ function createArticle($dbh) {
             'articleTexte' => htmlentities($_POST["text"]),
             'userId' => $_SESSION["user"]->userId,
         ]);
+        $query = "INSERT INTO article_motscles (article_motsclesId, articleId, motsclesId) VALUES (:article_motsclesId, :articleId, :motsclesId)";
+        $ajouteUser = $dbh->prepare($query);
+        $ajouteUser->execute([
+            'article_motsclesId' => ($_POST["titre"]),
+            'articleTexte' => ($_POST["text"]),
+            'userId' => $_SESSION["user"]->userId,
+        ]);
     } catch (PDOException $e) {
         $message = $e->getMessage();
         die($message);

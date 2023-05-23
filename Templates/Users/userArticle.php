@@ -12,6 +12,14 @@
             <?php if(isset($messageError["text"])) : ?><small><?= $messageError["text"] ?></small><?php endif ?> 
         </div>
         <div>
+            <label for="select-motcles">Choisir vos motclés (si vous voulez en choisir plusieurs pressé ctrl)</label>
+            <select name="motscles[]" id="select-motscles" multiple>
+                <?php foreach ($motscles as $motscle) : ?>
+                    <option value="<?= $motscle->motsclesId ?>"><?= $motscle->motsclesNom ?></option>
+                <?php endforeach ?>
+            </select>
+        </div>
+        <div>
             <button name="btnArticle" type="submit" value="envoyer"><?php if(isset($_SESSION["article"])) : ?><?php else : ?>Créer<?php endif ?></button>
         </div>
     </fieldset>
