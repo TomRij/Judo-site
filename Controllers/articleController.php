@@ -12,6 +12,8 @@ if($uri == "/index.php" ||  $uri == "/"){
     if (isset($_GET['articleId'])) {
         $articleId = $_GET['articleId'];
         $article = selectArticle($dbh, $articleId);
+        $motscle = selectMotsclesForArticle($dbh, $articleId);
+        var_dump($motscle);
         if ($article != null) {
             require_once "Templates/Articles/article.php";
         } else {
@@ -24,9 +26,14 @@ if($uri == "/index.php" ||  $uri == "/"){
     if(isset($_POST["btnArticle"])){
         $messageError = verifEmptyData();
         if (!$messageError) { //!$messageError est parail que $messageError == false
+            var_dump($_POST);
             createArticle($dbh);
+            $articleId = $dbh->lastInsertId();
+            foreach ($_POST['motscles'] as $motclesId)
+                addMotsclesToArticle($dbh, $articleId, $motclesId); 
+            }   
             header('location:/');
         }
-    }
+    
     require_once "Templates/users/userArticle.php";
 }
