@@ -13,7 +13,7 @@
         </div>
         <div>
             <label for="select-motcles">Choisir vos motclés (si vous voulez en choisir plusieurs pressé ctrl)</label>
-            <select name="motscles[]" id="select-motscles" multiple>
+            <select class="form-select-motscles" name="motscles[]" id="select-motscles" multiple>
                 <?php foreach ($motscles as $motscle) : ?>
                     <option value="<?= $motscle->motsclesId ?>"><?= $motscle->motsclesNom ?></option>
                 <?php endforeach ?>

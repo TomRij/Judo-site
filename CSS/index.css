@@ -82,6 +82,10 @@ main{
   }
   
   form select {
+    height: 40px;
+  }
+
+  .form-select-motscles{
     height: 120px;
   }
   
@@ -287,4 +291,11 @@ ol{
 }
 .profil-login{
   text-align: center;
+}
+
+.motscles{
+  font-size: 20px;
+  list-style: none;
+  letter-spacing: 5px;
+  padding: 10px;
 }

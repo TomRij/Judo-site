@@ -1,5 +1,3 @@
-
-        <h1 class="profil-login titre-profil">Votre page de profil</h1>
         <ol class="profil-login profil-liste">
             <div class="profil-login">
                 <li><h2>Bienvenue <?= $_SESSION["user"]->userLogin ?></h2></li>
