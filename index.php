@@ -28,6 +28,7 @@
         
         <?php if(isset($_SESSION["user"])): ?>
             <a class="menu-a" class="menu-a" href="profil">Profil</a>
+            <a class="menu-a" href="chat">Chat</a>
             <a class="menu-a" href="createArticle">Article</a>
             <a class="menu-a" href="deconnexion">Déconnexion</a>
         <?php else : ?>
@@ -38,6 +39,7 @@
         <?php
             require_once "Controllers/usersController.php";
             require_once "Controllers/articleController.php";
+            require_once "Controllers/conversationController.php";
 
         ?>
     </main>
