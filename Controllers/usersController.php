@@ -26,9 +26,12 @@ if($uri == "/connexion"){
     require_once "Templates/users/profil.php";
 }elseif ($uri === "/modifyProfil") { // MODIFY
     if(isset($_POST["btnEnvoi"])){
-        updateUser($dbh);
-        reloadSession($dbh);
-        header("location:/profil");
+        $messageError = verifEmptyData();
+        if (!$messageError) {
+            updateUser($dbh);
+            reloadSession($dbh);
+            header("location:/profil");
+        }
     }
     require_once "Templates/Users/inscription.php";
 }elseif ($uri === "/deleteProfil") { // DELETE
