@@ -34,4 +34,11 @@ if($uri == "/index.php" ||  $uri == "/"){
         }
     
     require_once "Templates/users/userArticle.php";
+} elseif ($uri === "/deleteArticle") {
+    if (isset($_POST['articleId'])) { 
+        $articleId = $_POST['articleId'];
+        deleteArticle($dbh, $articleId);
+        header("Location: /createArticle");
+        exit(); // J'ai trouvé cela sur un forum, je ne sais pas si c'est utile donc je préfère l'utiliser
+    }
 }

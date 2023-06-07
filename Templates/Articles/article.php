@@ -9,4 +9,9 @@
 <p class="article-complet-text"><?= $article->articleTexte ?></p>
 <p class="article-auteur">Auteur : <?= $article->userLogin ?></p>
 
-
+<?php if ($article->userLogin === $_SESSION['user']->userLogin) { ?>
+    <form action="/deleteArticle" method="post">
+        <input type="hidden" name="articleId" value="<?= $article->articleId ?>">
+        <button type="submit">Supprimer l'article</button>
+    </form>
+<?php } ?>

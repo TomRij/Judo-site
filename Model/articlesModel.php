@@ -56,3 +56,20 @@ function createArticle($dbh) {
     }
 }
 
+function deleteArticle($dbh, $articleId) {
+    try {
+        $query1 = "DELETE FROM article_motscles WHERE articleId = :articleId";
+        $query2 = "DELETE FROM article WHERE articleId = :articleId";
+
+        $deleteMotscles = $dbh->prepare($query1);
+        $deleteMotscles->execute(['articleId' => $articleId]);
+
+        $deleteArticle = $dbh->prepare($query2);
+        $deleteArticle->execute(['articleId' => $articleId]);
+
+    } catch (PDOException $e) {
+        $message = $e->getMessage();
+        die($message);
+    }
+}
+
