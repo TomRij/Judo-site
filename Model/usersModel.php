@@ -45,7 +45,7 @@ function updateUser($dbh)
             'userPrenom' => htmlentities($_POST['prenom']),
             'userPassword' => htmlentities($_POST['password']),
             'userEmail' => htmlentities($_POST['email']),
-            'id' => htmlentities($_SESSION["user"]-->userId),
+            'id' => htmlentities($_SESSION["user"]->userId),
             'ceintureId' => htmlentities($_POST['ceinture'])
         ]);
         reloadSession($dbh);
